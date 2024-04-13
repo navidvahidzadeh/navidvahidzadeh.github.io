@@ -1,0 +1,31 @@
+﻿{
+  "theme_color": "#E16D71",
+  "background_color": "#4B4975",
+  "display": "standalone",
+  "start_url": "/dana",
+  "name": "نرم افزار دانا",
+  "scope": "/Dana",
+
+  "icons": [
+    {
+      "src": "../../Images/pwa/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../../Images/pwa/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "../../Images/pwa/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "../../Images/pwa/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
