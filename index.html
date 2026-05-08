@@ -1,0 +1,630 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رزومه نوید وحیدزاده</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --sidebar-bg: #2c3e50;
+            --sidebar-text: #ecf0f1;
+            --main-bg: #ffffff;
+            --text-dark: #333333;
+            --primary-accent: #16a085;
+            --secondary-accent: #e67e22;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #f0f2f5;
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding: 40px 15px;
+        }
+
+        .resume-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--main-bg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        /* --- استایل نوار کناری (Sidebar) --- */
+        .sidebar {
+            width: 35%;
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-photo-container {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-accent);
+            margin: 0 auto 20px auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+            .profile-photo-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+        .sidebar h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .sidebar h2 {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--primary-accent);
+            margin-bottom: 30px;
+            direction: ltr;
+        }
+
+        .sidebar-section {
+            width: 100%;
+            margin-bottom: 35px;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            color: #fff;
+            border-bottom: 2px solid var(--primary-accent);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-list, .language-list {
+            list-style: none;
+        }
+
+            .contact-list li, .language-list li {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 15px;
+                font-size: 0.9rem;
+            }
+
+                .contact-list li i {
+                    color: var(--primary-accent);
+                    width: 20px;
+                    text-align: center;
+                }
+
+            .contact-list a {
+                color: var(--sidebar-text);
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                .contact-list a:hover {
+                    color: var(--primary-accent);
+                }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(255,255,255,0.05);
+            color: var(--sidebar-text);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            direction: ltr;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .lang-level {
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* --- استایل بدنه اصلی (Main Content) --- */
+        .main-content {
+            width: 65%;
+            padding: 50px 40px;
+            background-color: var(--main-bg);
+        }
+
+        .main-section {
+            margin-bottom: 45px;
+        }
+
+        .main-section-title {
+            font-size: 1.5rem;
+            color: var(--sidebar-bg);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+        }
+
+            .main-section-title::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                right: 0;
+                width: 50px;
+                height: 3px;
+                background-color: var(--primary-accent);
+            }
+
+            .main-section-title i {
+                color: var(--primary-accent);
+            }
+
+        .about-text {
+            text-align: justify;
+            color: #555;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-right: 4px solid var(--primary-accent);
+        }
+
+        /* استایل تایم‌لاین برای سوابق */
+        .timeline {
+            position: relative;
+            padding-right: 20px;
+        }
+
+            .timeline::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 10px;
+                height: 100%;
+                width: 2px;
+                background-color: var(--border-color);
+            }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+            .timeline-item::before {
+                content: '';
+                position: absolute;
+                right: -26px;
+                top: 5px;
+                width: 14px;
+                height: 14px;
+                background-color: var(--main-bg);
+                border: 3px solid var(--primary-accent);
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+            .timeline-header h4 {
+                font-size: 1.2rem;
+                color: var(--sidebar-bg);
+                direction: ltr;
+                text-align: right;
+            }
+
+        .timeline-date {
+            color: var(--secondary-accent);
+            font-weight: bold;
+            font-size: 0.9rem;
+            background-color: rgba(230, 126, 34, 0.1);
+            padding: 2px 10px;
+            border-radius: 15px;
+        }
+
+        .comp-name {
+            display: block;
+            color: var(--light-text);
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .timeline-body ul {
+            list-style: none;
+            padding-right: 5px;
+        }
+
+        .timeline-body li {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 7px;
+            position: relative;
+            padding-right: 15px;
+            text-align: justify;
+        }
+
+            .timeline-body li::before {
+                content: '•';
+                color: var(--primary-accent);
+                position: absolute;
+                right: 0;
+                font-weight: bold;
+            }
+
+        /* استایل کارت برای پروژه‌ها و گواهینامه‌ها */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .project-card {
+            background-color: #fcfcfc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-right: 3px solid var(--primary-accent);
+        }
+
+            .project-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            }
+
+            .project-card h4 {
+                color: var(--sidebar-bg);
+                margin-bottom: 8px;
+                font-size: 1.05rem;
+            }
+
+            .project-card p {
+                color: #555;
+                font-size: 0.9rem;
+                margin: 0;
+                line-height: 1.6;
+                text-align: justify;
+            }
+
+        /* گواهینامه‌ها */
+        .certs-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .cert-item {
+            background-color: #f9f9f9;
+            padding: 12px 15px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #eee;
+        }
+
+        .cert-name {
+            font-weight: bold;
+            color: var(--sidebar-bg);
+            font-size: 0.95rem;
+            direction: ltr;
+            text-align: right;
+        }
+
+        .cert-inst {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* --- واکنش‌گرایی (Responsive) --- */
+        @media (max-width: 850px) {
+            .resume-wrapper {
+                flex-direction: column;
+            }
+
+            .sidebar, .main-content {
+                width: 100%;
+            }
+
+            .sidebar {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .timeline-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            .cert-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .cert-name {
+                text-align: right;
+                width: 100%;
+            }
+        }
+
+        /* تنظیمات چاپ */
+        @media print {
+            body {
+                padding: 0;
+                background: #fff;
+            }
+
+            .resume-wrapper {
+                box-shadow: none;
+                border-radius: 0;
+                flex-direction: row;
+            }
+
+            .sidebar {
+                width: 35%;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .main-content {
+                width: 65%;
+            }
+
+            .sidebar-title, .main-section-title::after {
+                border-color: var(--primary-accent) !important;
+                background-color: var(--primary-accent) !important;
+            }
+
+            .timeline-date {
+                background-color: rgba(230, 126, 34, 0.1) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .about-text, .cert-item {
+                background-color: #f9f9f9 !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-wrapper">
+        <aside class="sidebar">
+            <div class="profile-header">
+                <div class="profile-photo-container">
+                    <img src="pictureScan.jpg" alt="نوید وحیدزاده">
+                </div>
+                <h1>نوید وحیدزاده</h1>
+                <h2>Backend Developer</h2>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title"><i class="fas fa-address-card"></i> اطلاعات فردی و تماس</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-phone"></i> <span style="direction: ltr;">(+98) 901 144 1060</span></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:n.vahidzadeh@gmail.com">n.vahidzadeh@gmail.com</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> تهران، آزادی</li>
+                    <li><i class="fas fa-id-card"></i> <span>وضعیت سربازی: پایان خدمت</span></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title"><i class="fas fa-bolt"></i> تخصص‌های کلیدی</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">.NET</span>
+                    <span class="skill-tag">.NET Framework</span>
+                    <span class="skill-tag">ASP.NET Core (Web API)</span>
+                    <span class="skill-tag">OOP</span>
+                    <span class="skill-tag">Clean Architecture</span>
+                    <span class="skill-tag">Domain-Driven Design (DDD)</span>
+                    <span class="skill-tag">Entity Framework Core</span>
+                    <span class="skill-tag">MS SQL Server</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">SignalR</span>
+                    <span class="skill-tag">SOLID</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">jQuery</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title"><i class="fas fa-language"></i> زبان‌ها</h3>
+                <ul class="language-list">
+                    <li>
+                        <div class="language-item">
+                            <span>انگلیسی</span>
+                            <span class="lang-level">متوسط</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="main-section">
+                <h3 class="main-section-title"><i class="fas fa-info-circle"></i> درباره من</h3>
+                <p class="about-text">
+                    توسعه دهنده Backend با بیش از ۹ سال تجربه تخصصی در اکوسیستم .NET. مسلط به طراحی و پیاده‌سازی سیستم‌های مقیاس‌پذیر و پیچیده در حوزه‌های بانکی، CRM، بازارگاه و BNPL. علاقه‌مند به حل چالش‌های فنی، بهینه‌سازی دیتابیس و پیاده‌سازی معماری‌های نوین.
+                </p>
+            </section>
+
+            <section class="main-section">
+                <h3 class="main-section-title"><i class="fas fa-briefcase"></i> سوابق شغلی</h3>
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <h4>Backend Developer</h4>
+                            <span class="timeline-date">آبان ۱۴۰۱ – تاکنون</span>
+                        </div>
+                        <span class="comp-name">شرکت دانا پرداز قشم</span>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>مشارکت در توسعه و بهینه‌سازی نرم‌افزار جامع مدیریت ارتباط با مشتریان (Dana CRM).</li>
+                                <li>طراحی و توسعه ماژول‌های نرم‌افزار مدیریت پشتیبانی و تیکتینگ مشتریان (Dana Desk).</li>
+                                <li>توسعه زیرساخت نرم‌افزار گفتگوی آنلاین (Dana Chat) جهت برقراری ارتباط پایدار.</li>
+                                <li>طراحی و توسعه نرم‌افزار تخصصی ویژه مدیریت مشاورین املاک.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <h4 style="direction: rtl;">برنامه‌نویس .NET</h4>
+                            <span class="timeline-date">مهر ۱۳۹۶ – مهر ۱۴۰۱</span>
+                        </div>
+                        <span class="comp-name">شرکت پارس پردازش دارامان</span>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>طراحی و پیاده‌سازی معماری سامانه‌های حساس اعتبارسنجی و مدیریت امور شرکت‌های بانک دی با رویکرد پایداری و امنیت.</li>
+                                <li>مشارکت کلیدی در توسعه و نگهداری زیرساخت‌های نرم‌افزاری سامانه ملی مسکن مهر (وزارت راه و شهرسازی).</li>
+                                <li>طراحی و توسعه پلتفرم‌های بازارگاه (Marketplace) و سامانه‌های نوین پرداخت اقساطی (BNPL) با تمرکز بر پردازش ایمن تراکنش‌ها.</li>
+                                <li>توسعه سرویس‌های ارتباطی جهت یکپارچه‌سازی و ادغام سیستم تلفنی Asterisk با پلتفرم‌های تحت وب مبتنی بر پروتکل امن SFTP.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="main-section">
+                <h3 class="main-section-title"><i class="fas fa-star"></i> پروژه‌های شاخص</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h4>سامانه مسکن مهر</h4>
+                        <p>توسعه و بهینه‌سازی زیرساخت‌های نرم‌افزاری سامانه جامع مسکن مهر، متعلق به وزارت راه و شهرسازی.</p>
+                    </div>
+                    <div class="project-card">
+                        <h4>سامانه امور شرکت‌های بانک دی</h4>
+                        <p>طراحی و توسعه پلتفرم یکپارچه برای مدیریت و خودکارسازی فرآیندهای امور شرکت‌های وابسته به بانک دی.</p>
+                    </div>
+                    <div class="project-card">
+                        <h4>نرم‌افزار دانا (Dana CRM)</h4>
+                        <p>مشارکت کلیدی در معماری و توسعه سیستم پیشرفته و مقیاس‌پذیر مدیریت ارتباط با مشتریان دانا.</p>
+                    </div>
+                    <div class="project-card">
+                        <h4>پلتفرم وامینه</h4>
+                        <p>توسعه و پشتیبانی مستمر زیرساخت وب‌سایت ارائه تسهیلات و خدمات خرید اقساطی (BNPL).</p>
+                    </div>
+                    <div class="project-card">
+                        <h4>سامانه هایپرکار</h4>
+                        <p>توسعه، نگهداری و ارتقای پلتفرم جامع آنلاین جهت فروش و توزیع قطعات خودرو.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main-section">
+                <h3 class="main-section-title"><i class="fas fa-certificate"></i> دوره‌ها و گواهینامه‌ها</h3>
+                <ul class="certs-list">
+                    <li class="cert-item">
+                        <span class="cert-name">ASP.NET Core Advanced</span>
+                        <span class="cert-inst">برنامه‌نویسان (تیر ۱۴۰۱)</span>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-name">Entity Framework</span>
+                        <span class="cert-inst">نیک آموز (تیر ۱۳۹۹)</span>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-name">ASP.NET Core</span>
+                        <span class="cert-inst">نیک آموز (تیر ۱۳۹۹)</span>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-name">Web based Client Application Development</span>
+                        <span class="cert-inst">مجتمع فنی تهران (تیر ۱۳۹۵)</span>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-name">Microsoft ADO.NET</span>
+                        <span class="cert-inst">مجتمع فنی تهران (فروردین ۱۳۹۵)</span>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-name">Windows based Client Application Development</span>
+                        <span class="cert-inst">مجتمع فنی تهران (دی ۱۳۹۴)</span>
+                    </li>
+                    <li class="cert-item">
+                        <span class="cert-name">SQL Server Database Development</span>
+                        <span class="cert-inst">مجتمع فنی تهران (مهر ۱۳۹۴)</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="main-section">
+                <h3 class="main-section-title"><i class="fas fa-graduation-cap"></i> سوابق تحصیلی</h3>
+                <div class="timeline">
+                    <div class="timeline-item" style="margin-bottom: 20px;">
+                        <div class="timeline-header">
+                            <h4 style="direction: rtl;">کارشناسی ارشد مهندسی کامپیوتر</h4>
+                            <span class="timeline-date">۱۳۹۸ – ۱۴۰۱</span>
+                        </div>
+                        <span class="comp-name">دانشگاه پیام نور شهرری (گرایش نرم‌افزار)</span>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <h4 style="direction: rtl;">کارشناسی مهندسی کامپیوتر</h4>
+                            <span class="timeline-date">۱۳۹۳ – ۱۳۹۸</span>
+                        </div>
+                        <span class="comp-name">دانشگاه آزاد واحد تهران جنوب (گرایش نرم‌افزار)</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
